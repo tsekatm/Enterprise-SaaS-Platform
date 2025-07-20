@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .status {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+    .success {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+    .error {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Server Test Page</h1>
+    <p>This page tests if the server is working correctly and can serve static files.</p>
+    
+    <div id="server-status" class="status">Checking server status...</div>
+    
+    <h2>API Test</h2>
+    <button id="test-api">Test API Connection</button>
+    <div id="api-result" style="display: none;">
+      <h3>API Response:</h3>
+      <pre id="api-response"></pre>
+    </div>
+    
+    <h2>Troubleshooting</h2>
+    <p>If you're seeing this page but other pages are not loading:</p>
+    <ul>
+      <li>Check if the server is running correctly</li>
+      <li>Check if there are any JavaScript errors in the browser console</li>
+      <li>Try restarting the server</li>
+      <li>Check if the file paths are correct</li>
+    </ul>
+    
+    <h2>Links to Test</h2>
+    <ul>
+      <li><a href="/">Home Page</a></li>
+      <li><a href="/account-crud.html">Account CRUD Page</a></li>
+      <li><a href="/crud.html">CRUD Page</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Check server status
+    const serverStatus = document.getElementById('server-status');
+    const testApiButton = document.getElementById('test-api');
+    const apiResult = document.getElementById('api-result');
+    const apiResponse = document.getElementById('api-response');
+    
+    // Set server status to success since the page loaded
+    serverStatus.textContent = 'Server is running! This page loaded successfully.';
+    serverStatus.classList.add('success');
+    
+    // Test API connection
+    testApiButton.addEventListener('click', async () => {
+      try {
+        const response = await fetch('/api/accounts');
+        
+        if (!response.ok) {
+          throw new Error(`API returned status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        apiResponse.textContent = JSON.stringify(data, null, 2);
+        apiResult.style.display = 'block';
+      } catch (error) {
+        apiResponse.textContent = `Error: ${error.message}`;
+        apiResult.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

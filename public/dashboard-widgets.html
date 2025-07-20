@@ -1,0 +1,210 @@
+<!-- Dashboard Widgets -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+  <!-- Left Column: Stats and Quick Actions -->
+  <div class="lg:col-span-2 space-y-6">
+    <!-- Stats Cards -->
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Account Statistics</h2>
+      </div>
+      <div class="p-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600 mb-1" id="total-accounts">0</div>
+            <div class="text-sm text-gray-600">Total Accounts</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600 mb-1" id="active-accounts">0</div>
+            <div class="text-sm text-gray-600">Active Accounts</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-yellow-600 mb-1" id="pending-accounts">0</div>
+            <div class="text-sm text-gray-600">Pending Accounts</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-purple-600 mb-1" id="recent-accounts">0</div>
+            <div class="text-sm text-gray-600">This Month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Quick Actions</h2>
+      </div>
+      <div class="p-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <button id="create-account-btn" class="flex flex-col items-center p-4 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+              <i class="fas fa-plus text-blue-600"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-900">Create Account</span>
+          </button>
+          
+          <button id="search-accounts-btn" class="flex flex-col items-center p-4 rounded-lg hover:bg-green-50 transition-colors duration-200">
+            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+              <i class="fas fa-search text-green-600"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-900">Search</span>
+          </button>
+          
+          <button id="manage-accounts-btn" class="flex flex-col items-center p-4 rounded-lg hover:bg-purple-50 transition-colors duration-200">
+            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+              <i class="fas fa-cog text-purple-600"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-900">Manage</span>
+          </button>
+          
+          <button id="reports-btn" class="flex flex-col items-center p-4 rounded-lg hover:bg-orange-50 transition-colors duration-200">
+            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+              <i class="fas fa-chart-bar text-orange-600"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-900">Reports</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Account Distribution Charts -->
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Account Distribution</h2>
+      </div>
+      <div class="p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Status Distribution Chart -->
+          <div class="bg-gray-50 rounded-lg p-4 h-64 flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-chart-pie text-4xl text-gray-300 mb-3"></i>
+              <p class="text-sm text-gray-500">Status Distribution Chart</p>
+              <p class="text-xs text-gray-400 mt-2">(Coming Soon)</p>
+            </div>
+          </div>
+          
+          <!-- Industry Distribution Chart -->
+          <div class="bg-gray-50 rounded-lg p-4 h-64 flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-chart-bar text-4xl text-gray-300 mb-3"></i>
+              <p class="text-sm text-gray-500">Industry Distribution Chart</p>
+              <p class="text-xs text-gray-400 mt-2">(Coming Soon)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Right Column: Activity and Shortcuts -->
+  <div class="space-y-6">
+    <!-- Welcome Card -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-lg shadow-sm overflow-hidden text-white">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-2">Welcome back!</h2>
+        <p class="text-blue-100 mb-4">Manage your customer accounts efficiently with our enterprise dashboard.</p>
+        <button id="create-account-hero" class="bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors duration-200 flex items-center">
+          <i class="fas fa-plus mr-2"></i>
+          Create New Account
+        </button>
+      </div>
+    </div>
+    
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-medium text-gray-900">Recent Activity</h2>
+        <a href="#" class="text-sm text-blue-600 hover:text-blue-800 font-medium">View All</a>
+      </div>
+      <div class="p-4">
+        <div class="space-y-3">
+          <div class="flex items-start p-2 hover:bg-gray-50 rounded-lg">
+            <div class="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-plus text-blue-600 text-xs"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-900">New account created</p>
+              <p class="text-xs text-gray-500">Acme Corporation • 2 hours ago</p>
+            </div>
+          </div>
+          <div class="flex items-start p-2 hover:bg-gray-50 rounded-lg">
+            <div class="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-edit text-green-600 text-xs"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-900">Account updated</p>
+              <p class="text-xs text-gray-500">TechSolutions Inc. • 5 hours ago</p>
+            </div>
+          </div>
+          <div class="flex items-start p-2 hover:bg-gray-50 rounded-lg">
+            <div class="h-8 w-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-eye text-yellow-600 text-xs"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-900">Account viewed</p>
+              <p class="text-xs text-gray-500">Global Industries • 1 day ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Shortcuts -->
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Shortcuts</h2>
+      </div>
+      <div class="p-4">
+        <div class="space-y-2">
+          <a href="#" class="flex items-center p-2 hover:bg-gray-50 rounded-lg group">
+            <i class="fas fa-star text-yellow-400 mr-3"></i>
+            <span class="text-sm text-gray-700 group-hover:text-gray-900">Favorite Accounts</span>
+          </a>
+          <a href="#" class="flex items-center p-2 hover:bg-gray-50 rounded-lg group">
+            <i class="fas fa-clock text-blue-400 mr-3"></i>
+            <span class="text-sm text-gray-700 group-hover:text-gray-900">Recently Viewed</span>
+          </a>
+          <a href="#" class="flex items-center p-2 hover:bg-gray-50 rounded-lg group">
+            <i class="fas fa-file-export text-green-400 mr-3"></i>
+            <span class="text-sm text-gray-700 group-hover:text-gray-900">Export Accounts</span>
+          </a>
+          <a href="#" class="flex items-center p-2 hover:bg-gray-50 rounded-lg group">
+            <i class="fas fa-cog text-purple-400 mr-3"></i>
+            <span class="text-sm text-gray-700 group-hover:text-gray-900">Account Settings</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Accounts Section -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+  <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
+    <h2 class="text-lg font-medium text-gray-900">Recent Accounts</h2>
+    <button id="view-all-btn" class="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center">
+      View All <i class="fas fa-arrow-right ml-1"></i>
+    </button>
+  </div>
+  
+  <!-- Loading State -->
+  <div id="loading-recent" class="flex justify-center py-12">
+    <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-8 w-8"></div>
+  </div>
+  
+  <!-- Recent Accounts Grid -->
+  <div id="recent-accounts-grid" class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 hidden">
+    <!-- Recent account cards will be inserted here -->
+  </div>
+  
+  <!-- Empty State -->
+  <div id="empty-recent" class="text-center py-12 hidden">
+    <i class="fas fa-inbox text-4xl text-gray-400 mb-4"></i>
+    <h3 class="text-lg font-medium text-gray-900 mb-2">No accounts yet</h3>
+    <p class="text-gray-600 mb-6">Get started by creating your first customer account</p>
+    <button id="create-first-account" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+      <i class="fas fa-plus mr-2"></i>
+      Create Your First Account
+    </button>
+  </div>
+</div>
